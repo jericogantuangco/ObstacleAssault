@@ -15,7 +15,8 @@ AMovingPlatform::AMovingPlatform()
 void AMovingPlatform::BeginPlay()
 {
 	Super::BeginPlay();
-	
+
+	SetActorLocation(nearPlayer);
 }
 
 // Called every frame
@@ -23,5 +24,9 @@ void AMovingPlatform::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	FVector localVector = FVector(1, 2, 3);
+	
+	nearPlayer.Y += 1;
+	SetActorLocation(nearPlayer);
 }
 
